@@ -8,7 +8,7 @@ object Form1: TForm1
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
-  DesignerMasterStyle = 3
+  DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Client
     Size.Width = 281.000000000000000000
@@ -13346,24 +13346,70 @@ object Form1: TForm1
         Size.Height = 48.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
-        object sbMenu: TSpeedButton
-          Align = Left
-          IconTintColor = claWhite
-          Size.Width = 48.000000000000000000
-          Size.Height = 48.000000000000000000
-          Size.PlatformDefault = False
-          StyleLookup = 'detailstoolbutton'
-          Text = 'sbMenu'
-        end
-        object SpeedButton1: TSpeedButton
+        object btnAdicionar: TSpeedButton
           Align = Right
           IconTintColor = claWhite
+          Images = ImageList1
+          ImageIndex = 1
           Position.X = 235.000000000000000000
           Size.Width = 48.000000000000000000
           Size.Height = 48.000000000000000000
           Size.PlatformDefault = False
-          StyleLookup = 'searchtoolbutton'
-          Text = 'SpeedButton1'
+          StyleLookup = 'actiontoolbutton'
+        end
+        object btnMenu: TSpeedButton
+          Align = Left
+          StyledSettings = [FontColor]
+          IconTintColor = claWhite
+          Images = ImageList1
+          ImageIndex = 3
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'actiontoolbutton'
+          Text = 'btnMenu'
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        object lblMain: TLabel
+          Align = Client
+          AutoSize = True
+          StyledSettings = [Family]
+          Size.Width = 91.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Family = 'Roboto'
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Principal'
+          TabOrder = 0
+        end
+        object btnVoltar: TSpeedButton
+          Align = Left
+          IconTintColor = claWhite
+          Images = ImageList1
+          ImageIndex = 2
+          Position.X = 48.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'actiontoolbutton'
+          OnClick = btnVoltarClick
+        end
+        object btnSalvar: TSpeedButton
+          Align = Right
+          IconTintColor = claBlack
+          Images = ImageList1
+          ImageIndex = 0
+          Position.X = 187.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'actiontoolbutton'
+          OnClick = btnSalvarClick
         end
       end
     end
@@ -13373,10 +13419,16 @@ object Form1: TForm1
       Size.Height = 432.000000000000000000
       Size.PlatformDefault = False
       TabHeight = 49.000000000000000000
-      TabIndex = 0
+      TabIndex = 3
       TabOrder = 0
       TabPosition = PlatformDefault
       Sizes = (
+        281s
+        383s
+        281s
+        383s
+        281s
+        383s
         281s
         383s
         281s
@@ -13385,8 +13437,8 @@ object Form1: TForm1
         CustomIcon = <
           item
           end>
-        IsSelected = True
-        Size.Width = 140.000000000000000000
+        IsSelected = False
+        Size.Width = 55.000000000000000000
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
@@ -13571,12 +13623,12 @@ object Form1: TForm1
           item
           end>
         IsSelected = False
-        Size.Width = 141.000000000000000000
+        Size.Width = 55.000000000000000000
         Size.Height = 49.000000000000000000
         Size.PlatformDefault = False
         StyleLookup = ''
         TabOrder = 0
-        Text = 'Main'
+        Text = 'Principal'
         ExplicitSize.cx = 20.000000000000000000
         ExplicitSize.cy = 49.000000000000000000
         object Rectangle6: TRectangle
@@ -13592,7 +13644,7 @@ object Form1: TForm1
             AutoSize = True
             StyledSettings = [Family, Style]
             Size.Width = 194.000000000000000000
-            Size.Height = 44.000000000000000000
+            Size.Height = 48.000000000000000000
             Size.PlatformDefault = False
             TextSettings.Font.Size = 36.000000000000000000
             TextSettings.FontColor = claWhite
@@ -13794,10 +13846,229 @@ object Form1: TForm1
           end
         end
       end
+      object tabLancamento: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 55.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Lan'#231'amentos'
+        ExplicitSize.cx = 70.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        object Rectangle7: TRectangle
+          Align = Top
+          Fill.Color = claWhite
+          Size.Width = 281.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claNull
+          object Label12: TLabel
+            Align = Client
+            Size.Width = 185.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.HorzAlign = Center
+            Text = 'Julho 2016'
+            TabOrder = 0
+          end
+          object SpeedButton2: TSpeedButton
+            Align = Left
+            Size.Width = 48.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'arrowlefttoolbutton'
+            Text = 'SpeedButton2'
+          end
+          object SpeedButton3: TSpeedButton
+            Align = Right
+            Position.X = 233.000000000000000000
+            Size.Width = 48.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'arrowrighttoolbutton'
+            Text = 'SpeedButton2'
+          end
+        end
+        object Rectangle8: TRectangle
+          Align = Bottom
+          Position.Y = 336.000000000000000000
+          Size.Width = 281.000000000000000000
+          Size.Height = 47.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claNull
+          object Layout7: TLayout
+            Align = Client
+            Size.Width = 281.000000000000000000
+            Size.Height = 47.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object Layout8: TLayout
+              Align = Left
+              Size.Width = 115.000000000000000000
+              Size.Height = 47.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Label13: TLabel
+                Align = Top
+                StyledSettings = [Family, Size, Style]
+                Size.Width = 115.000000000000000000
+                Size.Height = 23.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.HorzAlign = Center
+                Text = 'R$ 5.000,00'
+                TabOrder = 0
+              end
+              object Label14: TLabel
+                Align = Bottom
+                StyledSettings = [Family, Style]
+                Position.Y = 24.000000000000000000
+                Size.Width = 115.000000000000000000
+                Size.Height = 23.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Size = 11.000000000000000000
+                TextSettings.HorzAlign = Center
+                Text = 'RECEITAS'
+                TabOrder = 1
+              end
+            end
+            object Layout9: TLayout
+              Align = Right
+              Position.X = 166.000000000000000000
+              Size.Width = 115.000000000000000000
+              Size.Height = 47.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              object Label15: TLabel
+                Align = Top
+                StyledSettings = [Family, Size, Style]
+                Size.Width = 115.000000000000000000
+                Size.Height = 23.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.HorzAlign = Center
+                Text = 'R$ 5.000,00'
+                TabOrder = 0
+              end
+              object Label16: TLabel
+                Align = Bottom
+                StyledSettings = [Family, Style]
+                Position.Y = 24.000000000000000000
+                Size.Width = 115.000000000000000000
+                Size.Height = 23.000000000000000000
+                Size.PlatformDefault = False
+                TextSettings.Font.Size = 11.000000000000000000
+                TextSettings.HorzAlign = Center
+                Text = 'DESPESAS'
+                TabOrder = 1
+              end
+            end
+          end
+        end
+        object ListBox1: TListBox
+          Align = Client
+          Size.Width = 281.000000000000000000
+          Size.Height = 286.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          DisableFocusEffect = True
+          DefaultItemStyles.ItemStyle = ''
+          DefaultItemStyles.GroupHeaderStyle = ''
+          DefaultItemStyles.GroupFooterStyle = ''
+          Viewport.Width = 277.000000000000000000
+          Viewport.Height = 282.000000000000000000
+        end
+      end
+      object tabCategoria: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 55.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Categorias'
+        ExplicitSize.cx = 71.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        object listCategoria: TListView
+          ItemAppearanceClassName = 'TDynamicAppearance'
+          ItemEditAppearanceClassName = 'TDynamicAppearance'
+          HeaderAppearanceClassName = 'TListHeaderObjects'
+          FooterAppearanceClassName = 'TListHeaderObjects'
+          Align = Client
+          Size.Width = 281.000000000000000000
+          Size.Height = 383.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ItemAppearanceObjects.ItemObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+              Appearance.TextAlign = Leading
+            end
+            item
+              AppearanceObjectName = 'Accessory2'
+              AppearanceClassName = 'TAccessoryObjectAppearance'
+              Appearance.Width = 38.000000000000000000
+              Appearance.Height = 44.000000000000000000
+              Appearance.Align = Trailing
+              Appearance.PlaceOffset.X = -2.000000000000000000
+            end>
+          ItemAppearanceObjects.ItemEditObjects.ObjectsCollection = <
+            item
+              AppearanceObjectName = 'Text1'
+              AppearanceClassName = 'TTextObjectAppearance'
+            end>
+          OnItemClick = listCategoriaItemClick
+        end
+      end
+      object tabCategoriaCad: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 59.000000000000000000
+        Size.Height = 49.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = ''
+        TabOrder = 0
+        Text = 'Cad. Categoria'
+        ExplicitSize.cx = 57.000000000000000000
+        ExplicitSize.cy = 49.000000000000000000
+        object Label18: TLabel
+          Align = Top
+          Margins.Left = 15.000000000000000000
+          Margins.Top = 10.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Position.X = 15.000000000000000000
+          Position.Y = 10.000000000000000000
+          Size.Width = 251.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Label18'
+          TabOrder = 0
+        end
+        object edtDescCategoria: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = Top
+          TabOrder = 1
+          Position.X = 15.000000000000000000
+          Position.Y = 33.000000000000000000
+          Margins.Left = 15.000000000000000000
+          Margins.Right = 15.000000000000000000
+          Size.Width = 251.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+        end
+      end
     end
   end
   object MultiView1: TMultiView
-    MasterButton = sbMenu
+    MasterButton = btnMenu
     Mode = Drawer
     NavigationPaneOptions.CollapsedWidth = 209.000000000000000000
     Size.Width = 250.000000000000000000
@@ -17174,7 +17445,7 @@ object Form1: TForm1
           Position.X = 27.000000000000000000
           Position.Y = 72.000000000000000000
           Size.Width = 142.000000000000000000
-          Size.Height = 17.000000000000000000
+          Size.Height = 19.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Family = 'Roboto'
           TextSettings.Font.Size = 14.000000000000000000
@@ -17187,7 +17458,7 @@ object Form1: TForm1
           Position.X = 27.000000000000000000
           Position.Y = 88.000000000000000000
           Size.Width = 174.000000000000000000
-          Size.Height = 14.000000000000000000
+          Size.Height = 15.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Family = 'Roboto'
           TextSettings.Font.Size = 11.000000000000000000
@@ -17210,11 +17481,12 @@ object Form1: TForm1
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Position.X = 5.000000000000000000
-          Position.Y = 5.000000000000000000
+          Position.Y = 50.000000000000000000
           Size.Width = 240.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Stroke.Color = claNull
+          OnClick = Rectangle1Click
           object Image1: TImage
             MultiResBitmap.Height = 48
             MultiResBitmap.Width = 48
@@ -17277,7 +17549,7 @@ object Form1: TForm1
             Size.PlatformDefault = False
             StyleLookup = 'labelstyle'
             TextSettings.Font.Family = 'Roboto'
-            Text = 'Usu'#225'rios'
+            Text = 'Lan'#231'amentos'
             TabOrder = 1
           end
         end
@@ -17288,11 +17560,12 @@ object Form1: TForm1
           Margins.Top = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Position.X = 5.000000000000000000
-          Position.Y = 50.000000000000000000
+          Position.Y = 5.000000000000000000
           Size.Width = 240.000000000000000000
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Stroke.Color = claNull
+          OnClick = Rectangle2Click
           object Image2: TImage
             MultiResBitmap.Height = 48
             MultiResBitmap.Width = 48
@@ -17355,7 +17628,7 @@ object Form1: TForm1
             Size.PlatformDefault = False
             StyleLookup = 'labelstyle'
             TextSettings.Font.Family = 'Roboto'
-            Text = 'Usu'#225'rios'
+            Text = 'Principal'
             TabOrder = 1
           end
         end
@@ -17371,6 +17644,7 @@ object Form1: TForm1
           Size.Height = 40.000000000000000000
           Size.PlatformDefault = False
           Stroke.Color = claNull
+          OnClick = Rectangle3Click
           object Image3: TImage
             MultiResBitmap.Height = 48
             MultiResBitmap.Width = 48
@@ -17433,7 +17707,7 @@ object Form1: TForm1
             Size.PlatformDefault = False
             StyleLookup = 'labelstyle'
             TextSettings.Font.Family = 'Roboto'
-            Text = 'Usu'#225'rios'
+            Text = 'Categorias'
             TabOrder = 1
           end
         end
@@ -17443,11 +17717,89 @@ object Form1: TForm1
           Margins.Left = 5.000000000000000000
           Margins.Right = 5.000000000000000000
           Position.X = 5.000000000000000000
-          Position.Y = 135.000000000000000000
+          Position.Y = 180.000000000000000000
           Size.Width = 240.000000000000000000
           Size.Height = 50.000000000000000000
           Size.PlatformDefault = False
           Stroke.Color = claSilver
+        end
+        object Rectangle9: TRectangle
+          Align = Top
+          Fill.Color = claWhite
+          Margins.Left = 5.000000000000000000
+          Margins.Top = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 140.000000000000000000
+          Size.Width = 240.000000000000000000
+          Size.Height = 40.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claNull
+          object Image7: TImage
+            MultiResBitmap.Height = 48
+            MultiResBitmap.Width = 48
+            MultiResBitmap = <
+              item
+                Width = 48
+                Height = 48
+                PNG = {
+                  89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+                  87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  034D494441546843EDD9D9AB4D611CC6F16D8ECC5319AFC485798A14C5A57BA2
+                  B843A61377863FC054A2480A7F8122214A718F2BB940B930A5CC9929C3F73967
+                  2F9DE1596BBDEF5A6B1F47F6539FCE3975D6BBD6DEEB5DBFF7B7DF5D6BA699FF
+                  3CBDEA3FCBA63716613916602AC66108940F788E07B8851BB8899FF8AB998C43
+                  78865F919EE20026A1DB3316A7F01DEEE2627CC3498C46B7643DDEC05D4C19AF
+                  B1160D4B3F9C813B79957437FAA2D20CC255B81336C265E89C9544EF7CCCC57F
+                  C161CCC380BAF93882AF70C7387A1195DC89D37027701E633AD23213AA3EEE58
+                  47D3A954F4C0BA811DBDF359179F64165479DC18CE1A148A4AE55BB8411D4D9B
+                  D01C851BC3798551888EEABC1B308DE67C68B45ABB31D29C4054B4C2C62E527A
+                  584333106E8C349A7213D025EA615CB643D5A7A7A43F744D41D18B2AD2DBC44C
+                  A1857063645185EBD27CBA3BA0AE727CDBAF515957FF199298FF4DA2A64F2F3C
+                  377BE1DE813C5AA466202FB3115346DBDB8DDC9C833B38C41364BD085D7CCC42
+                  D6D959E4E62EDCC1A17427D436A854AADA886EBD6A7FD1773E7107B9515BEB0E
+                  EE095EA243DC474AD5FF9E5442DB47D7D661BD495B07FE99B83BA02934B2EDD7
+                  C2F901AD25EAA5148DA7D2DCA7F5AFE2515F34A6EDD7F41479883FE13CB6620E
+                  B472768E6EFD5C6CC305A87B756365097A8863CAE83D6CC260C4465B2E9BA1AD
+                  1637B6135446F7C01DDCDE67B4A0EC9450F4A96B2742EEC82EE46631DCC1096D
+                  52A9DDA83A4BF011EE9C89A0564295296BB5D43C6F5476C09D531E217827F120
+                  DC20321C8D8AAA953BA7EC4370D4F9A57DA0D980464505C19D53ED497487AC1D
+                  0137981E36CDD7AAB31469DB2EC7101DED55A6F545EF50E58B5886F770E77A81
+                  112814ED55BA4145776223CA660BB2BAD4552895B4A994D0AE5DC80799CED1FE
+                  D035B83113C7513A5A68B4CDE74E90D01715FA9FD5188AB40C8336AAAE40C7B8
+                  B1121791BB5086D6556DB46A195FD9FA577674616A311E42DBF08ACAE3144C43
+                  48077C097A33344D2B8BEE44DE74AA82A64D152D4A6AF460ABAD75272F43D5A6
+                  F4031B1AED556ABBAFEC675C51ED579D2F5C2ACB6422F6439B4EEEE2B2A8B751
+                  7B50640FEA4F829BA39CE8C1D42EC40AE8CB0C3DACFA9A35A9485AA4F435EB7D
+                  DCC6F5FA4FBD90669A69A6706AB5DF134ADF4443953A5D0000000049454E44AE
+                  426082}
+                FileName = 
+                  'C:\Users\romul\Desktop\teste\image\ic_account_circle_black_48dp\' +
+                  'android\drawable-mdpi\ic_account_circle_black_48dp.png'
+              end>
+            Align = Left
+            Margins.Left = 5.000000000000000000
+            Margins.Top = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Position.X = 5.000000000000000000
+            Position.Y = 10.000000000000000000
+            Size.Width = 30.000000000000000000
+            Size.Height = 20.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Label17: TLabel
+            Align = Left
+            StyledSettings = [Family, Style, FontColor]
+            Margins.Left = 10.000000000000000000
+            Position.X = 45.000000000000000000
+            Size.Width = 182.000000000000000000
+            Size.Height = 40.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'labelstyle'
+            TextSettings.Font.Family = 'Roboto'
+            Text = 'Usu'#225'rios'
+            TabOrder = 1
+          end
         end
       end
     end
@@ -17459,5 +17811,186 @@ object Form1: TForm1
       Category = 'Tab'
       Tab = tabMain
     end
+    object actLancamentos: TChangeTabAction
+      Category = 'Tab'
+      Tab = tabLancamento
+    end
+    object actCategoria: TChangeTabAction
+      Category = 'Tab'
+      Tab = tabCategoria
+    end
+    object actCategoriaCad: TChangeTabAction
+      Category = 'Tab'
+      Tab = tabCategoriaCad
+    end
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = dmMain.qryCategoria
+    ScopeMappings = <>
+    Left = 40
+    Top = 136
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 180
+    Top = 181
+    object LinkControlToField1: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'descricao'
+      Control = edtDescCategoria
+      Track = False
+    end
+    object LinkListControlToField2: TLinkListControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      Control = listCategoria
+      FillExpressions = <
+        item
+          SourceMemberName = 'descricao'
+          ControlMemberName = 'Text1'
+        end>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+  end
+  object ImageList1: TImageList
+    Source = <
+      item
+        MultiResBitmap.Height = 192
+        MultiResBitmap.Width = 192
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 192
+            Height = 192
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000C0000000C0080600000052DC6C
+              07000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              01A649444154785EEDDBB10DC3300C00412BFBEFECA8E0040E02C8F8BB865CE0
+              C146BA0000000000000000000000000000000000000000000000000000000000
+              80C7D64CFEE4DE667D646DB3F2079F99902400D204409A004813006902204D00
+              A409803401902600D204409A004813006902204D00A409803401902600D20440
+              9A004813006902204D00A409803401902600D204409A004813006902204D00A4
+              09803401902600D204409A004813006902204D00A409803401902600D204409A
+              004813006902204D00A4AD99C7BAB75979A1B5CD7A2417803401902600D20440
+              9A004813006902204D00A409803401902600D204409A00481300690220EDF8FF
+              006FF7EB7F86D3DFD3BF9D0B409A004813006902204D00A409803401902600D2
+              04409A004813006902204D00A409803401902600D204409A004813006902204D
+              00A409803401902600D204409A004813006902204D00A409803401902600D204
+              409A004813006902204D00A409803401902600D204409A004813006902204D00
+              A409803401000000000000000000000000000000000000000000000000000000
+              000000F0C0757D0195040CDE1E0013170000000049454E44AE426082}
+            FileName = 
+              'C:\app_controle_financeiro\image\ic_add_white_48dp\android\drawa' +
+              'ble-xxxhdpi\ic_add_white_48dp.png'
+          end>
+        Name = 'Adicionar'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0109494441546843EDD44B0AC2400CC6F1E2C645058FE3AB1773E7ADC41B781C
+              1FEDAE0F9326612AB6A26E6622DF6F531C06F24F9166000000007FA8EBBAA26D
+              DBBDFEF485E3CBB2BCD3931DF4D8070A1EC69BC92566FA4C02851655551DF33C
+              5FE8911F1C3FF2E659FA7F218AF41B4F5F9A1DE263407C2CEEE3E93B7FD3E021
+              C44FA201CBA6694E14B0D2A3AF458DAFEBFA2CB3BACB2F4B448BA7C1F3417C8F
+              42AEDF2C112DDEF02099177CBA04DDD9468D373C50E606BAC45AAFBC4826DEF0
+              60991F4C2D915CBCE100E90874898D5E4937DE7088F404B644F2F18683A42BE0
+              7017F186C3A4EFAD34E30D074AE7A8B4E30D874AEF131FF18683A5BBE72BDE70
+              B8DB78000000F859963D0077EB4F2572D504250000000049454E44AE426082}
+            FileName = 
+              'C:\app_controle_financeiro\image\ic_done_white_48dp\android\draw' +
+              'able-mdpi\ic_done_white_48dp.png'
+          end>
+        Name = 'Salvar'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              00A6494441546843EDD8410A83301046E1D04BF56A2E3D724F90F40F9D810A71
+              53D09929EF031151C21BD14D1A0000571963ECF3B0CB5A2CDED51A62067FBA0F
+              36BB9D9B4257F1AFDEFBD31EC94BA1C4875028F121144A7C0885121F42A1C487
+              50E82AFE1696F03BAD11163F59C6A9879DFF9B5E44DD4FC869ADBA3FB1533043
+              A4A060864841C10C9182821922050533440A0A5E0D51636BD129F87B88D23BD4
+              35E3010005B4F606DD0016D88691173A0000000049454E44AE426082}
+            FileName = 
+              'C:\app_controle_financeiro\image\ic_arrow_back_white_48dp\androi' +
+              'd\drawable-mdpi\ic_arrow_back_white_48dp.png'
+          end>
+        Name = 'Voltar'
+      end
+      item
+        MultiResBitmap.Height = 48
+        MultiResBitmap.Width = 48
+        MultiResBitmap.LoadSize = 0
+        MultiResBitmap = <
+          item
+            Width = 48
+            Height = 48
+            PNG = {
+              89504E470D0A1A0A0000000D49484452000000300000003008060000005702F9
+              87000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+              0042494441546843EDD5B111C030080340F0FE3B272E687C1980F8F86FA45695
+              020060B0ACFC78B6AABF905BD5C3AABC960100B379E26E0600CCE689BB190000
+              40978817A5B30C16289261D40000000049454E44AE426082}
+            FileName = 
+              'C:\app_controle_financeiro\image\ic_menu_white_48dp\android\draw' +
+              'able-mdpi\ic_menu_white_48dp.png'
+          end>
+        Name = 'Menu'
+      end>
+    Destination = <
+      item
+        Layers = <
+          item
+            Name = 'Salvar'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Adicionar'
+            SourceRect.Right = 192.000000000000000000
+            SourceRect.Bottom = 192.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Voltar'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end
+      item
+        Layers = <
+          item
+            Name = 'Menu'
+            SourceRect.Right = 48.000000000000000000
+            SourceRect.Bottom = 48.000000000000000000
+          end>
+      end>
+    Left = 48
+    Top = 200
   end
 end
